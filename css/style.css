@@ -2343,6 +2343,9 @@ body:not(.theme-white) .partner.partner-hide::before{
 .history__slide-btn .btn-2{
     font-size: 24px;
 }
+.history__slide-btn .btn-2:hover::before{
+    top: -70px;
+}
 .slider-btns{
     display: flex;
     align-items: center;
@@ -2827,6 +2830,18 @@ body:not(.theme-white) .partner.partner-hide::before{
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+.examples__slide-image::before{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    opacity: 0;
+    transition: all .1s ease;
+    background: linear-gradient(0deg, rgba(19, 19, 19, 0.20) 0%, rgba(19, 19, 19, 0.20) 100%);
+}
+.examples__slide.swiper-slide:not(.swiper-slide-active) .examples__slide-image::before{
+    opacity: 1;
 }
 .examples__slide-content{
     padding: 30px 15px;
