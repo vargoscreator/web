@@ -1,3 +1,22 @@
+
+    const bottomInner = document.querySelector('.header__bottom-inner');
+    const headerContent = document.querySelector('.header__content');
+    const headerBottom = document.querySelector('.header__bottom .container');
+    function handleHeaderLayout() {
+        const windowWidth = window.innerWidth;
+        if (windowWidth < 769) {
+            if (!headerContent.contains(bottomInner)) {
+                headerContent.appendChild(bottomInner);
+            }
+        } else {
+            if (headerContent.contains(bottomInner)) {
+                headerBottom.appendChild(bottomInner);
+            }
+        }
+    }
+    handleHeaderLayout();
+    window.addEventListener('resize', handleHeaderLayout);
+
 gsap.registerPlugin(ScrollTrigger);
 
 const mm = gsap.matchMedia();
@@ -116,25 +135,6 @@ if(document.querySelector('.blog__slide-inner')){
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const bottomInner = document.querySelector('.header__bottom-inner');
-    const headerContent = document.querySelector('.header__content');
-    const headerBottom = document.querySelector('.header__bottom .container');
-    function handleHeaderLayout() {
-        const windowWidth = window.innerWidth;
-        if (windowWidth < 769) {
-            if (!headerContent.contains(bottomInner)) {
-                headerContent.appendChild(bottomInner);
-            }
-        } else {
-            if (headerContent.contains(bottomInner)) {
-                headerBottom.appendChild(bottomInner);
-            }
-        }
-    }
-    window.addEventListener('load', handleHeaderLayout);
-    window.addEventListener('resize', handleHeaderLayout);
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('.header');
