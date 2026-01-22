@@ -1112,24 +1112,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    let partnersSlider = new Swiper(".partners__slider", {
-        loop: true,
-        spaceBetween: 20,
-        slidesPerView: 1,
-        allowTouchMove: true,
-        speed: 800,
-        pagination: {
-            el: ".partners__slider-pagination",
-            clickable: true,
+let partnersSlider = new Swiper(".partners__slider", {
+    loop: true,
+    spaceBetween: 20,
+    slidesPerView: 2,
+    allowTouchMove: true,
+    speed: 5000, 
+    autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+    },
+    freeMode: true, 
+    pagination: {
+        el: ".partners__slider-pagination",
+        clickable: true,
+    },
+    breakpoints: {
+        769: {
+            spaceBetween: 30,
+            slidesPerView: 3,
         },
-        breakpoints: {
-            769: {
-                spaceBetween: 30,
-                slidesPerView: 3,
-            },
-            1025: {
-                spaceBetween: 30,
-                slidesPerView: 4,
-            },
+        1025: {
+            spaceBetween: 30,
+            slidesPerView: 4,
         },
-    });
+    },
+});
