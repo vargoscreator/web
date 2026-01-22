@@ -4610,3 +4610,18 @@ body.theme-white .header__change svg:nth-of-type(2){
         height: 500px;
     }
 }
+.btn-2{
+    position: relative;
+}
+.btn-2 span{
+    position: relative;
+}
+.btn-2 span:last-of-type{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 1;
+    color: #fff;
+    mix-blend-mode: color;
+}
